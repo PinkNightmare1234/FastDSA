@@ -20,6 +20,13 @@ struct DSU
    		 return parent[v] = find_set(parent[v]);
 
 	}
+	
+	int get_size(int v){
+		
+		int temp=find_set(v) ;
+		return size[temp] ;
+
+	}
 
 
 	void union_sets(int a,int b){
