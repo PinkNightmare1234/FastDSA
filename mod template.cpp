@@ -1,14 +1,4 @@
 
-
-
-
-// auto mod int
-// https://youtu.be/L8grWxBlIZ4?t=9858
-// https://youtu.be/ERZuLAxZffQ?t=4807 : optimize
-// https://youtu.be/8uowVvQ_-Mo?t=1329 : division
-
-
-
 const int mod = 998244353;
 struct mint {
   ll x; // typedef long long ll;
@@ -27,7 +17,15 @@ struct mint {
   mint operator-(const mint a) const { return mint(*this) -= a;}
   mint operator*(const mint a) const { return mint(*this) *= a;}
  
+  mint pow(ll t) const {
+    if (!t) return 1;
+    mint a = pow(t>>1);
+    a *= a;
+    if (t&1) a *= *this;
+    return a;
+  }
 
+  //to take mod power,simply mint y=xpow(20) ;
 
 
  
